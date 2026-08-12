@@ -128,3 +128,13 @@ Somnya
 │
 └── v1.0
     └── Android + Jetpack Compose
+```
+## Imagens
+
+<div align = "center">
+<img width="250" height="250" alt="somnyaSemFundo" src="https://github.com/user-attachments/assets/d2fbc2fe-449e-4304-a777-0b6124fc1ba2" />
+
+<img width="264" height="273" alt="layout_interface" src="https://github.com/user-attachments/assets/90322d72-b489-4813-b29a-90231a9b6187" />
+
+<img width="306" height="322" alt="ChatGPT Image 12 de ago  de 2026, 16_30_50" src="https://github.com/user-attachments/assets/0e1b5787-48ad-40fd-bbb3-352a7fabd5d2" />
+</div>
