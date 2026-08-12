@@ -1,150 +1,130 @@
-# MP3
+# Somnya
 
-Um projeto de um tocador de música portátil inspirado em dispositivos como iPod e Sony Walkman, desenvolvido para reproduzir músicas locais e serviços de streaming em um hardware compacto e dedicado.
+**Somnya** é um launcher Android desenvolvido em Kotlin, criado para transformar a interface do aparelho em uma experiência dedicada à música, deixando de lado recursos que não são essenciais para esse propósito.
 
-> **Objetivo:** criar um dispositivo de música independente do celular, com interface própria, utilizando hardware de baixo custo e componentes reaproveitados.
+O projeto começou como uma aplicação de console para desenvolver e testar a lógica do sistema antes da implementação da interface Android.
+
+## Objetivo
+
+Desenvolver uma interface simples e funcional para:
+
+- Reprodução de músicas locais
+- Organização de músicas em playlists
+- Reprodução e gerenciamento de músicas
+- Acesso ao Spotify
+- Acesso ao YouTube Music
+- Interface otimizada para música
+
+## Roadmap
+
+O desenvolvimento do Somnya será dividido em versões, evoluindo gradualmente de uma aplicação de console para um launcher Android.
+
+### v0.1 — Console
+
+Primeira implementação do projeto utilizando Kotlin em console.
+
+Objetivo: desenvolver a estrutura básica do launcher sem depender de uma interface gráfica.
+
+Funcionalidades iniciais:
+
+- Menu principal
+- Criação de playlists
+- Listagem de playlists
+- Exclusão de playlists
 
 ---
 
-## Filosofia do Projeto
+### v0.2 — Biblioteca de músicas e playlists
 
-- Portabilidade
-- Interface simples e intuitiva
-- Reprodução de músicas locais
-- Suporte ao Spotify
-- Suporte ao YouTube Music
-- Hardware compacto
-- Baixo custo
-- Fácil manutenção
-- Expansível
+Expansão da estrutura desenvolvida na v0.1.
+
+Objetivos:
+
+- Cadastro de músicas
+- Biblioteca de músicas
+- Adição e remoção de músicas
+- Organização por playlists
+- Navegação entre playlists
 
 ---
 
-# Roadmap
+### v0.3 — Tocando Agora
 
-## Parte 1 — Somnya MP3 Launcher
+Implementação da lógica e simulação da tela **Tocando Agora**.
 
-Desenvolvimento de um launcher Android dedicado para reprodução de músicas.
+Objetivos:
 
-### Objetivos
+- Música atual
+- Artista
+- Álbum
+- Duração
+- Play/Pause
+- Próxima música
+- Música anterior
+- Controle da fila de reprodução
 
-- Interface própria
-- Reprodução de músicas locais
+Esta versão continuará sendo executada em console, mas terá como objetivo reproduzir o comportamento da futura interface gráfica.
+
+---
+
+### v0.4 — Persistência
+
+Implementação do armazenamento permanente dos dados.
+
+Objetivos:
+
+- Salvar músicas
+- Salvar playlists
+- Carregar dados ao iniciar o programa
+- Manter informações entre execuções
+
+---
+
+### v1.0 — Android
+
+Migração do projeto para Android utilizando **Kotlin** e **Jetpack Compose**.
+
+Objetivos:
+
+- Interface gráfica
+- Biblioteca de músicas
+- Playlists
+- Tela Tocando Agora
+- Navegação entre telas
+- Barra superior com informações do sistema
+- Barra inferior de navegação
 - Integração com Spotify
 - Integração com YouTube Music
-- Inicialização automática ao ligar o dispositivo
-- Compatível com Android 8 ou superior
+- Definição do Somnya como launcher padrão
 
----
+## Tecnologias
 
-## Parte 2 — Hardware
+- **Kotlin**
+- **Android**
+- **Jetpack Compose** — a partir da v1.0
 
-Pesquisa e aquisição de um hardware compacto.
+## Status
 
-Hardware em estudo:
+**Em desenvolvimento**
 
-- Amazon Fire TV Stick
-- Xiaomi Mi TV Stick
-- Outros dispositivos Android compactos
+Atualmente o projeto está na fase de desenvolvimento da lógica em Kotlin através do console.
 
-Critérios:
+## Estrutura de desenvolvimento
 
-- Baixo consumo
-- Wi-Fi
-- Dados móveis
-- Bluetooth
-- Pequenas dimensões
-- Boa disponibilidade
-
----
-
-## Parte 3 — Modificação
-
-Transformar o hardware em um tocador portátil.
-
-Planejamento:
-
-- Nova carcaça
-- Tela integrada
-- Bateria interna
-- Entrada P2
-- Botões físicos
-- Grande autonomia
-- Redução das bordas da tela
-- Melhor ergonomia
-
----
-
-## Futuro
-
-Caso seja necessário, estudar a criação de um Android otimizado exclusivamente para reprodução de músicas.
-
-Possíveis alterações:
-
-- Remoção de aplicativos desnecessários (debloat)
-- Launcher como interface principal
-- Inicialização direta no launcher
-- Otimizações de desempenho
-- Redução do consumo de bateria
-
----
-
-# Interface
-
-O projeto possui três modos principais.
-
-## Música Local
-
-Interface própria desenvolvida especificamente para o dispositivo.
-
-Funções planejadas:
-
-- Biblioteca
-- Playlists
-- Favoritos
-- Reprodução
-- Busca
-
----
-
-## Spotify
-
-Utilização do aplicativo oficial mantendo:
-
-- Barra superior personalizada
-- Barra inferior personalizada
-
----
-
-## YouTube Music
-
-Utilização do aplicativo oficial mantendo:
-
-- Barra superior personalizada
-- Barra inferior personalizada
-
----
-
-# Tecnologias
-
-- Kotlin
-- Android Studio
-- Jetpack Compose (planejado)
-
----
-
-# Estrutura Atual
-
-Atualmente o projeto encontra-se na fase de desenvolvimento da lógica utilizando Kotlin em modo console. As funcionalidades implementadas incluem:
-
-- Criação de playlists
-- Exclusão de playlists
-- Listagem de playlists
-
-Essas funcionalidades servem como base para a futura interface gráfica Android. :contentReference[oaicite:0]{index=0}
-
----
-
-# Objetivo Final
-
-Construir um tocador de música portátil que proporcione uma experiência semelhante a um dispositivo dedicado, eliminando distrações comuns de smartphones e oferecendo uma interface otimizada exclusivamente para ouvir música.
+```text
+Somnya
+│
+├── v0.1
+│   └── Console
+│
+├── v0.2
+│   └── Biblioteca e Playlists
+│
+├── v0.3
+│   └── Tocando Agora
+│
+├── v0.4
+│   └── Persistência
+│
+└── v1.0
+    └── Android + Jetpack Compose
