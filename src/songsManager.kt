@@ -1,20 +1,26 @@
 fun showSongs(){
     //print("\u001b[H\u001b[2J")
-    dataBaseSongs.forEachIndexed{
-            index, Song ->
+    if(dataBaseSongs.isNotEmpty()){
+        dataBaseSongs.forEachIndexed { index, Song ->
 
-        val nameSong = Song.name
-        val durationSong = "${Song.duration.minutes}:${Song.duration.seconds}"
-        val singerSong = Song.singer
-        val albumSong = Song.album
+            val nameSong = Song.name
+            val durationSong = "${Song.duration.minutes}:${Song.duration.seconds}"
+            val singerSong = Song.singer
+            val albumSong = Song.album
 
-        print("""
+            print(
+                """
 
                         
         ${index + 1} - $nameSong            $durationSong
             $singerSong
         
-        """.trimIndent())
+        """.trimIndent()
+            )
+        }
+    }
+    else{
+        println("NO SONGS!")
     }
 }
 
@@ -108,6 +114,20 @@ fun songsManager(){
 
             "4"->{
                 print("\u001b[H\u001b[2J")
+                showSongs()
+                if(dataBaseSongs.isNotEmpty()) {
+                    do {
+                        println("\nSelect a song to delete: ")
+                        val songToDelete = readln().toInt() - 1
+                        if (songToDelete >= 0 && songToDelete < dataBaseSongs.size) {
+                            println("${dataBaseSongs[songToDelete].name} HAS BEEN DELETED!")
+                            dataBaseSongs.removeAt(songToDelete)
+                            break
+                        } else {
+                            println("INVALID OPTION!")
+                        }
+                    } while (true)
+                }
             }
 
             "5"->{

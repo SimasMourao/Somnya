@@ -12,7 +12,7 @@ fun showPlaylist(){
     }
 }
 
-fun createPlaylist()/*: Playlist*/ {
+fun createPlaylist(){
     do{
         println("Choose a Name For The Playlist:")
         //lê a entrada do usuário e exclui espaços da esquerda e direita
@@ -28,14 +28,13 @@ fun createPlaylist()/*: Playlist*/ {
             dataBasePlaylists.add(newPlaylist)
             println("*\t".repeat(5))
 
-            //return newPlaylist
+
         }
         else{
             println("\nInvalid name!\n")
             println("=".repeat(50))
         }
     }while(namePlaylist.isEmpty())
-    //return TODO("Provide the return value")
 }
 
 fun playlistsManager(){
