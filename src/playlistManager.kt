@@ -12,14 +12,37 @@ fun showPlaylist(){
     }
 }
 
+fun createPlaylist()/*: Playlist*/ {
+    do{
+        println("Choose a Name For The Playlist:")
+        //lê a entrada do usuário e exclui espaços da esquerda e direita
+        val namePlaylist: String = readln().trim()
+
+        if(namePlaylist.isNotEmpty()){
+            //criar instância da classe laylist
+            val newPlaylist = Playlist(namePlaylist)
+
+            println("\n$namePlaylist created!")
+
+            //adiciona a nova Playlist na lista global de playlist
+            dataBasePlaylists.add(newPlaylist)
+            println("*\t".repeat(5))
+
+            //return newPlaylist
+        }
+        else{
+            println("\nInvalid name!\n")
+            println("=".repeat(50))
+        }
+    }while(namePlaylist.isEmpty())
+    //return TODO("Provide the return value")
+}
+
 fun playlistsManager(){
 
     //função tocar playlist:
     fun playPlaylist(playlistChoose: Int){
         print("\u001b[H\u001b[2J")
-
-
-
 
         println("""
                     ${"-".repeat(50)}
@@ -34,7 +57,7 @@ fun playlistsManager(){
         if(songPlaylist.isNotEmpty()){
             songPlaylist.forEachIndexed{
                     index, song ->
-                println("/${index + 1} - ${song.name}\t\t ${song.duration.minutes}:${song.duration.seconds}\n")
+                println("${index + 1} - ${song.name}\t\t ${song.duration.minutes}:${song.duration.seconds}\n")
             }
         }
         else{
@@ -80,26 +103,7 @@ fun playlistsManager(){
 
             "2" -> {
                 print("\u001b[H\u001b[2J")
-                do{
-                    println("Choose a Name For The Playlist:")
-                    //lê a entrada do usuário e exclui espaços da esquerda e direita
-                    val namePlaylist: String = readln().trim()
-
-                    if(namePlaylist.isNotEmpty()){
-                        //criar instância da classe laylist
-                        val newPlaylist = Playlist(namePlaylist)
-
-                        println("\n$namePlaylist created!")
-
-                        //adiciona a nova Playlist na lista global de playlist
-                        dataBasePlaylists.add(newPlaylist)
-                        println("*\t".repeat(5))
-                    }
-                    else{
-                        println("\nInvalid name!\n")
-                        println("=".repeat(50))
-                    }
-                }while(namePlaylist.isEmpty())
+                createPlaylist()
             }
 
             "3" -> {

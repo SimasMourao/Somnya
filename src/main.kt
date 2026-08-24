@@ -1,13 +1,12 @@
-
 fun main(){
 
-    val plLst1 = Playlist("puta")
-    val plLst2 = Playlist("bunda")
-    val plLst3 = Playlist("vadia")
+  /*  val plLst1 = Playlist("ps1")
+    val plLst2 = Playlist("ps2")
+    val plLst3 = Playlist("ps3")
 
     dataBasePlaylists.add(plLst1)
     dataBasePlaylists.add(plLst2)
-    dataBasePlaylists.add(plLst3)
+    dataBasePlaylists.add(plLst3)*/
 
     val song01 = Song("Faint", "Linkin Park", Duration(3, 50), "Meteora")
     val song02 = Song("Everlong", "Foo Figthers", Duration(3, 45))
@@ -22,9 +21,9 @@ fun main(){
         ${"=".repeat(50)}
                     MP3 Launcher
         
-            1 - Songs
+            1 - Library
             
-            2 - Playlist Manager
+            2 - Playlists
             
             3 - Exit
         
@@ -32,7 +31,7 @@ fun main(){
         ${"=".repeat(50)}
         """.trimIndent())
 
-        var chosen = readln().toInt()
+        val chosen = readln().toInt()
         when(chosen){
             1 ->{
                 print("\u001b[H\u001b[2J")
