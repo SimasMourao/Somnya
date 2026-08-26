@@ -67,27 +67,44 @@ fun songsManager(){
 
             "2"->{
                 //print("\u001b[H\u001b[2J")
-                println("CHOSEN A MUSIC: ")
-                val musicChosen  = readln().toInt() -1
-                val music = dataBaseSongs[musicChosen]
+                do {
+                    var music: Song? = null
 
-                showPlaylist()
+                    println("Chosen a music: ")
+                    val musicChosen = readln().toIntOrNull()?.let { it -1 }
+                    if(musicChosen != null && musicChosen >= 0 && musicChosen < dataBaseSongs.size) {
+                        music = dataBaseSongs[musicChosen]
+                        showPlaylist()
 
-                if(dataBasePlaylists.isEmpty()){
-                    createPlaylist()
-                    val choosePlaylist = dataBasePlaylists[0]
-                    choosePlaylist.songs.add(music)
-                    println("${music.name} HAS BEEN ADDED TO ${choosePlaylist.playlistName}!")
-                }
-                else {
-                    println("CHOSEN A PLAYLIST: ")
-                    val playlistChosen = readln().toInt() - 1
+                        if(dataBasePlaylists.isEmpty()){
+                            createPlaylist()
+                            val choosePlaylist = dataBasePlaylists[0]
+                            choosePlaylist.songs.add(music)
+                            println("${music.name} HAS BEEN ADDED TO ${choosePlaylist.playlistName}!")
+                        }
+                        else {
+                            do {
+                                var playlist: Playlist? = null
 
+                                println("Chosen a playlist: ")
+                                val playlistChosen = readln().toIntOrNull()?.let { it - 1 }
 
-                val playlist = dataBasePlaylists[playlistChosen]
+                                if (playlistChosen != null && playlistChosen >= 0 && playlistChosen < dataBaseSongs.size) {
+                                    playlist = dataBasePlaylists[playlistChosen]
+                                    playlist.songs.add(music)
+                                    println("\n${music.name} HAS BEEN ADDED TO ${playlist.playlistName}!\n")
+                                }
+                                else{
+                                    println("\nEMPTY INPUT!\n")
+                                }
+                            }while (playlistChosen == null)
+                        }
+                    }
+                    else{
+                        println("\nEMPTY INPUT!\n")
+                    }
 
-                playlist.songs.add(music)
-                }
+                }while (musicChosen == null)
             }
 
             "3"->{
@@ -119,11 +136,17 @@ fun songsManager(){
                     do {
                         println("\nSelect a song to delete: ")
                         val songToDelete = readln().toInt() - 1
+
                         if (songToDelete >= 0 && songToDelete < dataBaseSongs.size) {
                             println("${dataBaseSongs[songToDelete].name} HAS BEEN DELETED!")
+                            dataBasePlaylists.forEach {
+                                playlist -> playlist.songs.remove(dataBaseSongs[songToDelete])
+                            }
+
                             dataBaseSongs.removeAt(songToDelete)
                             break
-                        } else {
+                        }
+                        else {
                             println("INVALID OPTION!")
                         }
                     } while (true)

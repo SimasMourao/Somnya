@@ -1,12 +1,12 @@
 fun main(){
 
-  /*  val plLst1 = Playlist("ps1")
+    val plLst1 = Playlist("ps1")
     val plLst2 = Playlist("ps2")
     val plLst3 = Playlist("ps3")
 
     dataBasePlaylists.add(plLst1)
     dataBasePlaylists.add(plLst2)
-    dataBasePlaylists.add(plLst3)*/
+    dataBasePlaylists.add(plLst3)
 
     val song01 = Song("Faint", "Linkin Park", Duration(3, 50), "Meteora")
     val song02 = Song("Everlong", "Foo Figthers", Duration(3, 45))
