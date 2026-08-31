@@ -48,9 +48,20 @@ Objetivos:
 
 ---
 
-### v0.3 — Tocando Agora
+### v0.2+local — Arquivos locais
 
-Implementação da lógica e simulação da tela **Tocando Agora**.
+Extensão da v0.2, focada em substituir o cadastro manual de músicas pela leitura de arquivos de música locais.
+
+Objetivos:
+
+- Encontrar músicas armazenadas no dispositivo
+- adicionar à biblioteca a partir dos próprios arquivos
+
+---
+
+### v0.3 — Máquina de estados
+
+Implementação da máquina de estados e lógica e simulação da tela **Tocando Agora**.
 
 Objetivos:
 
@@ -100,6 +111,7 @@ Objetivos:
 ## Tecnologias
 
 - **Kotlin**
+- **Intellij**
 - **Android**
 - **Jetpack Compose** — a partir da v1.0
 
